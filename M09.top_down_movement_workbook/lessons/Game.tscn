@@ -22,7 +22,7 @@ position = Vector2(-582, -888)
 position = Vector2(361, -925)
 
 [node name="SimpleObstacle3" parent="." instance=ExtResource("2_s44tt")]
-position = Vector2(-1300, -357)
+position = Vector2(-1269, -329)
 
 [node name="SimpleObstacle4" parent="." instance=ExtResource("2_s44tt")]
 position = Vector2(1326, -102)
