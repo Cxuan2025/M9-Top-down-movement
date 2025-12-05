@@ -16,13 +16,13 @@ texture = ExtResource("1_a3skl")
 position = Vector2(-1358, 9)
 
 [node name="SimpleObstacle" parent="." instance=ExtResource("2_s44tt")]
-position = Vector2(-600, -830)
+position = Vector2(-582, -888)
 
 [node name="SimpleObstacle2" parent="." instance=ExtResource("2_s44tt")]
-position = Vector2(346, -976)
+position = Vector2(361, -925)
 
 [node name="SimpleObstacle3" parent="." instance=ExtResource("2_s44tt")]
-position = Vector2(-1272, -354)
+position = Vector2(-1300, -357)
 
 [node name="SimpleObstacle4" parent="." instance=ExtResource("2_s44tt")]
 position = Vector2(1326, -102)
