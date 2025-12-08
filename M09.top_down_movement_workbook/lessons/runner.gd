@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var _runner_visual: RunnerVisual = %RunnerVisualRed
 
+@onready var _dust: GPUParticles2D = $Dust
+
 ## The top speed that the runner can achieve.
 @export var max_speed := 600.0
 ## How much speed is added per second when the player presses a movement key.
@@ -29,7 +31,7 @@ func _physics_process(delta: float) -> void:
 			if current_speed_percent < 0.8
 			else RunnerVisual.Animations.RUN
 		)
-		if current_speed_percent > 0.8:
-			_runner_visual.animation_name = RunnerVisual.Animations.WALK
+		_dust.emitting = true
 	else:
 		_runner_visual.animation_name = RunnerVisual.Animations.IDLE
+		_dust.emitting = false
