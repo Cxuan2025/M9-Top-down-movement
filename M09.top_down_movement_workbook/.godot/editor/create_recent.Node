@@ -1,8 +1,10 @@
+ColorRect
+CollisionShape2D
+FinishLine
 GPUParticles2D
 Sprite2D
 SubViewport
 Camera2D
 CollisionPolygon2D
 StaticBody2D
-CollisionShape2D
 CharacterBody2D

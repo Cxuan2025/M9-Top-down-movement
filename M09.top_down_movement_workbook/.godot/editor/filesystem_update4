@@ -3,3 +3,5 @@ res://addons/gdpractice/assets/theme.tres
 res://assets/character_contour.gdshader
 res://lessons/test_particles.tscn
 res://lessons/runner.gd
+res://lessons/Game.tscn
+res://lessons/game.gd
