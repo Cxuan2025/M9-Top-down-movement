@@ -5,3 +5,4 @@ res://lessons/test_particles.tscn
 res://lessons/runner.gd
 res://lessons/Game.tscn
 res://lessons/game.gd
+res://assets/finish_line/finish_line.tscn

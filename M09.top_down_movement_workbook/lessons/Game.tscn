@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6vroy358eqsu"]
+[gd_scene load_steps=9 format=3 uid="uid://b6vroy358eqsu"]
 
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_a3skl"]
 [ext_resource type="Script" uid="uid://5nrf8ebgtofs" path="res://lessons/game.gd" id="1_fk8tt"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://l5vkm11cgaib" path="res://lessons/simple_obstacle.tscn" id="2_s44tt"]
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="3_05a00"]
 [ext_resource type="PackedScene" uid="uid://ctfrkukdhiywq" path="res://lessons/circuit.tscn" id="3_s44tt"]
+[ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_wdy8n"]
+[ext_resource type="Script" uid="uid://57e8080cpukf" path="res://assets/countdown/count_down.gd" id="8_6im6f"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -16,11 +18,12 @@ z_index = -1
 texture = ExtResource("1_a3skl")
 
 [node name="Runner" parent="." instance=ExtResource("1_y45g0")]
-position = Vector2(-1296, 277)
+unique_name_in_owner = true
+position = Vector2(-1298, 212)
 
 [node name="FinishLine" parent="." instance=ExtResource("3_05a00")]
 unique_name_in_owner = true
-position = Vector2(-1345, 243)
+position = Vector2(-1343, 246)
 area_width = 256
 
 [node name="SimpleObstacle" parent="." instance=ExtResource("2_s44tt")]
@@ -37,3 +40,25 @@ position = Vector2(1326, -102)
 
 [node name="Circuit" parent="." instance=ExtResource("3_s44tt")]
 metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CountDown" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -49.0
+offset_right = 302.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_wdy8n")
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_6im6f")
+metadata/_custom_type_script = "uid://57e8080cpukf"
