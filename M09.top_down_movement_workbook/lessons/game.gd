@@ -1,11 +1,9 @@
 extends Node2D
 @onready var _count_down: CountDown = %CountDown
 @onready var _runner: Runner = %Runner
-
 @onready var _finish_line: FinishLine = %FinishLine
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
 	_finish_line.body_entered.connect(func (body: Node) -> void:
 		if body is not Runner:
 			return
