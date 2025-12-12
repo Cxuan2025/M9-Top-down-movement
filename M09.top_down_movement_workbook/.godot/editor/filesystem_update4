@@ -8,3 +8,5 @@ res://lessons/game.gd
 res://assets/finish_line/finish_line.tscn
 res://lessons/pause_screen.tscn
 res://lessons/pause_screen.gd
+res://lessons/bouncer.tscn
+res://lessons/bouncer.gd
