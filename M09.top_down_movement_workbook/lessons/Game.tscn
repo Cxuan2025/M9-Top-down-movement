@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6vroy358eqsu"]
+[gd_scene load_steps=10 format=3 uid="uid://b6vroy358eqsu"]
 
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_a3skl"]
 [ext_resource type="Script" uid="uid://5nrf8ebgtofs" path="res://lessons/game.gd" id="1_fk8tt"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ctfrkukdhiywq" path="res://lessons/circuit.tscn" id="3_s44tt"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_wdy8n"]
 [ext_resource type="Script" uid="uid://57e8080cpukf" path="res://assets/countdown/count_down.gd" id="8_6im6f"]
+[ext_resource type="PackedScene" uid="uid://dj6ye05dbiqpi" path="res://lessons/pause_screen.tscn" id="9_6im6f"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -63,3 +64,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("8_6im6f")
 metadata/_custom_type_script = "uid://57e8080cpukf"
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_6im6f")]
+menu_opened_amount = 0.49
