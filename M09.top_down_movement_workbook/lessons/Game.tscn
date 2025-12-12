@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dj6ye05dbiqpi" path="res://lessons/pause_screen.tscn" id="9_6im6f"]
 
 [node name="Game" type="Node2D"]
+process_mode = 1
 y_sort_enabled = true
 position = Vector2(-2, 0)
 script = ExtResource("1_fk8tt")
@@ -66,4 +67,6 @@ script = ExtResource("8_6im6f")
 metadata/_custom_type_script = "uid://57e8080cpukf"
 
 [node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_6im6f")]
-menu_opened_amount = 0.49
+process_mode = 3
+menu_opened_amount = 0.678
+animation_duration = null
