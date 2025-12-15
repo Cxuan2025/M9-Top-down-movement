@@ -1,24 +1,48 @@
 extends CharacterBody2D
 
-@onready var sprite_2d: Sprite2D = %Sprite2D
-@onready var camera_2d: Camera2D = %Camera2D
+## The top speed that the runner can achieve
+@export var max_speed := 600.0
+## How much speed is added per second when the player presses a movement key
+@export var acceleration := 1200.0
 
-## Closest possible value. Higher is closer
-@export var max_zoom_factor := 1.0
-## Farthest possible value. Lower is farther
-@export var min_zoom_factor := 0.7
-## Maximum speed attained by the ship
-@export var max_speed := 1000.0
+@onready var _dust: GPUParticles2D = %Dust
+@onready var _runner_visual: RunnerVisual = %RunnerVisualPurple
 
-var direction := Vector2.ZERO
+@onready var _hit_box: Area2D = %HitBox
+
+
+func _ready() -> void:
+	_hit_box.body_entered.connect(func(body: Node) -> void:
+		if body is Runner:
+			get_tree().reload_current_scene.call_deferred()
+	)
+
 
 func _physics_process(delta: float) -> void:
-	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = velocity.lerp(direction * max_speed, 0.05)
-	sprite_2d.rotation = velocity.angle()
+	var direction := global_position.direction_to(get_global_player_position())
+	var distance := global_position.distance_to(get_global_player_position())
+	var speed := max_speed if distance > 100 else max_speed * distance / 100
+
+	var desired_velocity := direction * speed
+	velocity = velocity.move_toward(desired_velocity, acceleration * delta)
 	move_and_slide()
-	
-	# widen camera zoom depending on speed
-	var speed_fraction := velocity.length() / max_speed
-	var zoom_fraction := lerpf(min_zoom_factor, max_zoom_factor, 1.0 - speed_fraction)
-	camera_2d.zoom = camera_2d.zoom.lerp(Vector2.ONE * zoom_fraction, 0.2)
+
+	if velocity.length() > 10.0:
+		var angle := rotate_toward(_runner_visual.angle, direction.orthogonal().angle(), 8.0 * delta)
+		_runner_visual.angle = angle
+
+		var current_speed_percent := velocity.length() / max_speed
+		_runner_visual.animation_name = (
+			RunnerVisual.Animations.WALK
+			if current_speed_percent < 0.8
+			else RunnerVisual.Animations.RUN
+		)
+
+		_dust.emitting = true
+	else:
+		_runner_visual.animation_name = RunnerVisual.Animations.IDLE
+		_dust.emitting = false
+
+
+func get_global_player_position() -> Vector2:
+	return get_tree().root.get_node("Game/Runner").global_position

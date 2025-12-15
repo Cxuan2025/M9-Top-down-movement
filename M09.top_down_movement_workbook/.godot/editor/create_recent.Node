@@ -1,3 +1,6 @@
+CollisionShape2D
+Area2D
+Camera2D
 Button
 VBoxContainer
 CenterContainer
@@ -7,8 +10,5 @@ ColorRect
 Control
 CountDown
 CanvasLayer
-CollisionShape2D
 FinishLine
 GPUParticles2D
-Sprite2D
-SubViewport
