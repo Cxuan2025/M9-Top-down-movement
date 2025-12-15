@@ -1,4 +1,4 @@
-res://lessons/runner.tscn
+res://lessons/raycast_test.tscn
 res://addons/gdpractice/assets/theme.tres
 res://assets/character_contour.gdshader
-res://lessons/Game.tscn
+res://lessons/ray_cast_2d.gd
