@@ -23,11 +23,11 @@ texture = ExtResource("1_a3skl")
 
 [node name="Runner" parent="." instance=ExtResource("10_ea1n2")]
 unique_name_in_owner = true
-position = Vector2(-1109, -423)
+position = Vector2(-1292, -124)
 
 [node name="Bouncer" parent="." instance=ExtResource("1_y45g0")]
 unique_name_in_owner = true
-position = Vector2(-1318, -117)
+position = Vector2(-1391, 190)
 
 [node name="FinishLine" parent="." instance=ExtResource("3_05a00")]
 unique_name_in_owner = true
@@ -35,16 +35,16 @@ position = Vector2(-1343, 246)
 area_width = 256
 
 [node name="SimpleObstacle" parent="." instance=ExtResource("2_s44tt")]
-position = Vector2(-582, -888)
+position = Vector2(-636, -859)
 
 [node name="SimpleObstacle2" parent="." instance=ExtResource("2_s44tt")]
-position = Vector2(361, -925)
+position = Vector2(363, -890)
 
 [node name="SimpleObstacle3" parent="." instance=ExtResource("2_s44tt")]
-position = Vector2(-1214, -414)
+position = Vector2(-1408, -103)
 
 [node name="SimpleObstacle4" parent="." instance=ExtResource("2_s44tt")]
-position = Vector2(1326, -102)
+position = Vector2(1400, 139)
 
 [node name="Circuit" parent="." instance=ExtResource("3_s44tt")]
 metadata/_edit_lock_ = true
@@ -74,3 +74,12 @@ metadata/_custom_type_script = "uid://57e8080cpukf"
 [node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_6im6f")]
 process_mode = 3
 menu_opened_amount = 0.678
+
+[node name="SimpleObstacle5" parent="." instance=ExtResource("2_s44tt")]
+position = Vector2(-251, -963)
+
+[node name="SimpleObstacle6" parent="." instance=ExtResource("2_s44tt")]
+position = Vector2(-461, 293)
+
+[node name="SimpleObstacle7" parent="." instance=ExtResource("2_s44tt")]
+position = Vector2(-754, 656)
